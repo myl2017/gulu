@@ -1,10 +1,33 @@
 <template>
-    <button class="g-button">按钮</button>
+    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
+        <svg class="g-icon loading"><use xlink:href="#icon-loading"></use></svg>
+        <g-icon v-if="icon" :name="icon"></g-icon>
+        <div class="content">
+            <slot></slot>
+        </div>
+    </button>
 </template>
 <script>
-    export default {}
+    export default {
+//      props: ['icon','iconPosition']
+        props: {
+            icon: {},
+            iconPosition: {
+                type: String,
+                default: 'left',
+                validator(value) {
+                    console.log(value)
+                    return value === 'left' || value === 'right'
+                }
+            }
+        }
+    }
 </script>
 <style scope lang="scss">
+    @keyframes spin {
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg);}
+    }
     .g-button {
         font-size: var(--font-size);
         height: var(--button-height);
@@ -12,16 +35,19 @@
         border-radius: var(--border-radius);
         border: 1px solid var(--border-color);
         background: var(--button-bg);
-        &:hover {
-            border-color: var(--border-color-hover);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        &:hover {  border-color: var(--border-color-hover); }
+        &:active { background-color: var(--button-active-bg); }
+        &:focus { outline: none; }
+        > .content { order: 2; }
+        > .g-icon { order: 1; margin-right: .3em;}
+        &.icon-right {
+            > .content { order: 1; }
+            > .g-icon {  order: 2;  margin-right: 0; margin-left: .3em;}
         }
-
-         &.active {
-             background-color: var(--button-active-bg);
-         }
-
-         &:focus {
-             outline: none;
-         }
+        .loading { animation: spin 1s infinite linear;}
     }
 </style>
