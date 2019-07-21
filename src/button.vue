@@ -1,7 +1,7 @@
 <template>
-    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
-        <svg class="g-icon loading"><use xlink:href="#icon-loading"></use></svg>
-        <g-icon v-if="icon" :name="icon"></g-icon>
+    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+        <g-icon class="loading g-icon" v-if="loading" name="loading"></g-icon>
+        <g-icon v-if="icon && !loading" :name="icon"></g-icon>
         <div class="content">
             <slot></slot>
         </div>
@@ -19,6 +19,10 @@
                     console.log(value)
                     return value === 'left' || value === 'right'
                 }
+            },
+            loading: {
+                type: Boolean,
+                default: false
             }
         }
     }

@@ -10,7 +10,7 @@
         }
     }
 </script>
-<style scope lang="scss">
+<style lang="scss">
     .g-icon {
         width: 1em;
         height: 1em;
