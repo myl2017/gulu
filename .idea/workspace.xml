@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0745a2ee-f472-4de0-9f97-d4993c4961b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/icon.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app.js" afterPath="$PROJECT_DIR$/src/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/button.vue" afterPath="$PROJECT_DIR$/src/button.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -252,7 +248,7 @@
       <option name="presentableId" value="Default" />
       <updated>1563593554129</updated>
       <workItem from="1563593555375" duration="8808000" />
-      <workItem from="1563607113337" duration="15970000" />
+      <workItem from="1563607113337" duration="16022000" />
     </task>
     <task id="LOCAL-00001" summary="按钮添加样式">
       <created>1563601086935</created>
@@ -275,11 +271,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563667820363</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加icon组件和loading状态">
+      <created>1563696845369</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1563696845369</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24778000" />
+    <option name="totallyTimeSpent" value="24830000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -324,7 +327,8 @@
     <MESSAGE value="按钮添加样式" />
     <MESSAGE value="安装 parcel-bunlder" />
     <MESSAGE value="安装parcel和node-sass成功" />
-    <option name="LAST_COMMIT_MESSAGE" value="安装parcel和node-sass成功" />
+    <MESSAGE value="添加icon组件和loading状态" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加icon组件和loading状态" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
