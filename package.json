@@ -21,9 +21,17 @@
   },
   "homepage": "https://github.com/myl2017/gulu#readme",
   "dependencies": {
-    "vue": "^2.6.10"
+    "node-libs-browser": "^0.4.1",
+    "parcel-bundler": "^1.12.3",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.3"
+    "@vue/component-compiler-utils": "^3.0.0",
+    "sass": "^1.22.7",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.common.js"
   }
 }
