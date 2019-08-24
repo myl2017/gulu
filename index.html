@@ -31,11 +31,41 @@
         }
     </style>
     <style>
-        .box { margin: 20px;}
+        .box {
+            margin: 20px;
+        }
     </style>
 </head>
 <body>
 <div id="app">
+    <div style="border: 1px solid black;">
+        <g-row gutter="20">
+            <g-col>111</g-col>
+            <g-col>222</g-col>
+        </g-row>
+
+        <g-row gutter="20">
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
+        </g-row>
+        <g-row gutter="20">
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+            <g-col>3</g-col>
+            <g-col>4</g-col>
+        </g-row>
+        <g-row gutter="20">
+            <g-col :span="2">1</g-col>
+            <g-col :span="22">2</g-col>
+        </g-row>
+        <g-row gutter="20">
+            <g-col :span="4">1</g-col>
+            <g-col :span="20" offset="2">2</g-col>
+        </g-row>
+    </div>
+
+    <hr/>
     <div class="box">
         <g-input value="张三" disabled></g-input>
         <g-input value="李四" readonly></g-input>
@@ -44,7 +74,7 @@
     <div class="box">
         <g-input v-model="message"></g-input>
         <p>{{message}}</p>
-        <button @click="message+=1"> +1 </button>
+        <button @click="message+=1"> +1</button>
     </div>
     <div class="box">
         <g-input value="王" @change="inputChange" class="input-change"></g-input>
