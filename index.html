@@ -35,112 +35,141 @@
             margin: 20px;
         }
     </style>
+    <style>
+        .demo {
+            border: 1px solid #666;
+            min-height: 100px;
+        }
+
+        .sider {
+            background: #333;
+            width: 200px;
+        }
+
+        .header {
+            background: #999;
+            height: 100px;
+        }
+
+        .footer {
+            background: #ccc;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
 <div id="app">
-    <div style="border: 1px solid black;">
-        <g-row gutter="20">
-            <g-col span="2"
-            :phone="{span:24}"
-            :ipad="{span:8}"
-            :narrow-pc="{span:4}"
-            :pc="{span:2}"
-            :wide-pc="{span:1}"
-            >
-                1
-            </g-col>
-            <g-col span="22"
-                   :phone="{span:24, offset:0}"
-                   :ipad="{span:16}"
-                   :narrow-pc="{span:20}"
-                   :pc="{span:22}"
-                   :wide-pc="{span:23}"
-            >
-                2
-            </g-col>
-        </g-row>
-    </div>
+    <g-layout style="height: 100vh;">
+        <g-sider class="demo">sider</g-sider>
+        <g-layout>
+            <g-header class="demo">sider</g-header>
+            <g-content class="demo">content</g-content>
+            <g-footer class="demo">footer</g-footer>
+        </g-layout>
+    </g-layout>
+    <!--<div style="border: 1px solid black;">-->
+    <!--<g-row gutter="20">-->
+    <!--<g-col span="2"-->
+    <!--:phone="{span:24}"-->
+    <!--:ipad="{span:8}"-->
+    <!--:narrow-pc="{span:4}"-->
+    <!--:pc="{span:2}"-->
+    <!--:wide-pc="{span:1}"-->
+    <!--&gt;-->
+    <!--1-->
+    <!--</g-col>-->
+    <!--<g-col span="22"-->
+    <!--:phone="{span:24, offset:0}"-->
+    <!--:ipad="{span:16}"-->
+    <!--:narrow-pc="{span:20}"-->
+    <!--:pc="{span:22}"-->
+    <!--:wide-pc="{span:23}"-->
+    <!--&gt;-->
+    <!--2-->
+    <!--</g-col>-->
+    <!--</g-row>-->
+    <!--</div>-->
     <!--<g-row class="topbar">-->
-        <!--<g-col class="demoBox" span="9">-->
-            <!--<g-row align="left">-->
-                <!--<g-col>1</g-col>-->
-                <!--<g-col>2</g-col>-->
-                <!--<g-col>3</g-col>-->
-                <!--<g-col>4</g-col>-->
-            <!--</g-row>-->
-        <!--</g-col>-->
-        <!--<g-col class="demoBox" span="15">-->
-            <!--<g-row align="right">-->
-                <!--<g-col>1</g-col>-->
-                <!--<g-col>2</g-col>-->
-                <!--<g-col>3</g-col>-->
-                <!--<g-col>4</g-col>-->
-                <!--<g-col>5</g-col>-->
-                <!--<g-col>6</g-col>-->
-                <!--<g-col>7</g-col>-->
-            <!--</g-row>-->
-        <!--</g-col>-->
+    <!--<g-col class="demoBox" span="9">-->
+    <!--<g-row align="left">-->
+    <!--<g-col>1</g-col>-->
+    <!--<g-col>2</g-col>-->
+    <!--<g-col>3</g-col>-->
+    <!--<g-col>4</g-col>-->
+    <!--</g-row>-->
+    <!--</g-col>-->
+    <!--<g-col class="demoBox" span="15">-->
+    <!--<g-row align="right">-->
+    <!--<g-col>1</g-col>-->
+    <!--<g-col>2</g-col>-->
+    <!--<g-col>3</g-col>-->
+    <!--<g-col>4</g-col>-->
+    <!--<g-col>5</g-col>-->
+    <!--<g-col>6</g-col>-->
+    <!--<g-col>7</g-col>-->
+    <!--</g-row>-->
+    <!--</g-col>-->
     <!--</g-row>-->
 
     <!--<div style="border: 1px solid black;">-->
-        <!--<g-row gutter="20">-->
-            <!--<g-col>111</g-col>-->
-            <!--<g-col>222</g-col>-->
-        <!--</g-row>-->
+    <!--<g-row gutter="20">-->
+    <!--<g-col>111</g-col>-->
+    <!--<g-col>222</g-col>-->
+    <!--</g-row>-->
 
-        <!--<g-row gutter="20">-->
-            <!--<g-col>1</g-col>-->
-            <!--<g-col>2</g-col>-->
-            <!--<g-col>3</g-col>-->
-        <!--</g-row>-->
-        <!--<g-row gutter="20">-->
-            <!--<g-col>1</g-col>-->
-            <!--<g-col>2</g-col>-->
-            <!--<g-col>3</g-col>-->
-            <!--<g-col>4</g-col>-->
-        <!--</g-row>-->
-        <!--<g-row gutter="20">-->
-            <!--<g-col :span="2">1</g-col>-->
-            <!--<g-col :span="22">2</g-col>-->
-        <!--</g-row>-->
-        <!--<g-row gutter="20">-->
-            <!--<g-col :span="4">1</g-col>-->
-            <!--<g-col :span="20" offset="2">2</g-col>-->
-        <!--</g-row>-->
+    <!--<g-row gutter="20">-->
+    <!--<g-col>1</g-col>-->
+    <!--<g-col>2</g-col>-->
+    <!--<g-col>3</g-col>-->
+    <!--</g-row>-->
+    <!--<g-row gutter="20">-->
+    <!--<g-col>1</g-col>-->
+    <!--<g-col>2</g-col>-->
+    <!--<g-col>3</g-col>-->
+    <!--<g-col>4</g-col>-->
+    <!--</g-row>-->
+    <!--<g-row gutter="20">-->
+    <!--<g-col :span="2">1</g-col>-->
+    <!--<g-col :span="22">2</g-col>-->
+    <!--</g-row>-->
+    <!--<g-row gutter="20">-->
+    <!--<g-col :span="4">1</g-col>-->
+    <!--<g-col :span="20" offset="2">2</g-col>-->
+    <!--</g-row>-->
     <!--</div>-->
 
-    <hr/>
-    <div class="box">
-        <g-input value="张三" disabled></g-input>
-        <g-input value="李四" readonly></g-input>
-        <g-input value="王五"></g-input>
-    </div>
-    <div class="box">
-        <g-input v-model="message"></g-input>
-        <p>{{message}}</p>
-        <button @click="message+=1"> +1</button>
-    </div>
-    <div class="box">
-        <g-input value="王" @change="inputChange" class="input-change"></g-input>
-    </div>
-    <div class="box">
-        <g-input value="王" error="姓名不能少于两个字"></g-input>
-    </div>
-    <div class="box">
-        <g-button icon="setting" :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
-        <g-button icon="left" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
-        <g-button icon="right" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮</g-button>
+    <!--<hr/>-->
+    <!--<div class="box">-->
+    <!--<g-input value="张三" disabled></g-input>-->
+    <!--<g-input value="李四" readonly></g-input>-->
+    <!--<g-input value="王五"></g-input>-->
+    <!--</div>-->
+    <!--<div class="box">-->
+    <!--<g-input v-model="message"></g-input>-->
+    <!--<p>{{message}}</p>-->
+    <!--<button @click="message+=1"> +1</button>-->
+    <!--</div>-->
+    <!--<div class="box">-->
+    <!--<g-input value="王" @change="inputChange" class="input-change"></g-input>-->
+    <!--</div>-->
+    <!--<div class="box">-->
+    <!--<g-input value="王" error="姓名不能少于两个字"></g-input>-->
+    <!--</div>-->
+    <!--<div class="box">-->
+    <!--<g-button icon="setting" :loading="loading1" @click="loading1 = !loading1">按钮</g-button>-->
+    <!--<g-button icon="left" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>-->
+    <!--<g-button icon="right" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮</g-button>-->
 
-        <g-button-group>
-            <g-button icon="left">上页</g-button>
-            <g-button>更多</g-button>
-            <g-button icon="right" icon-position="right">下页</g-button>
-        </g-button-group>
-    </div>
+    <!--<g-button-group>-->
+    <!--<g-button icon="left">上页</g-button>-->
+    <!--<g-button>更多</g-button>-->
+    <!--<g-button icon="right" icon-position="right">下页</g-button>-->
+    <!--</g-button-group>-->
+    <!--</div>-->
 
-    <div id="test">
+    <!--<div id="test">-->
 
-    </div>
+    <!--</div>-->
 </div>
 
 <script src="./src/app.js"></script>
