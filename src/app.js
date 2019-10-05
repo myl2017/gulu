@@ -40,19 +40,56 @@ const app = new Vue({
         }
     },
     created(){
-        setTimeout(() => {
-            let event = new Event('change')
-            // let inputElement = app.$el.querySelector('.input-change')
-            // inputElement.dispatchEvent(event)
-            console.log('hi')
-        }, 3000)
+        // setTimeout(() => {
+        //     let event = new Event('change')
+        //     // let inputElement = app.$el.querySelector('.input-change')
+        //     // inputElement.dispatchEvent(event)
+        //     console.log('hi')
+        // }, 3000)
+
+        // this.$toast(`你的智商目前为 ${parseInt(Math.random() * 100)}。你的智商需要充值！`, {
+        //     position: 'bottom',
+        //     enableHtml: false,
+        //     closeButton: {
+        //         text: '已充值',
+        //         callback(toast) {
+        //             toast.log()
+        //             console.log('他说已经充值智商了')
+        //         }
+        //     },
+        //     autoClose: true,
+        //     autoCloseDelay: 30
+        // })
+
+        // this.$toast('<strong>我是 message</strong>', {})
     },
     methods: {
         inputChange(e) {
             console.log(e)
         },
-        showToast() {
-            this.$toast('this is toast!')
+        showToast1() {
+            this.showToast('top')
+        },
+        showToast2() {
+            this.showToast('middle')
+        },
+        showToast3() {
+            this.showToast('bottom')
+        },
+        showToast(position) {
+            this.$toast(`你的智商目前为 ${parseInt(Math.random() * 100)}。你的智商需要充值！`, {
+                position,
+                enableHtml: false,
+                closeButton: {
+                    text: '已充值',
+                    callback(toast) {
+                        toast.log()
+                        console.log('他说已经充值智商了')
+                    }
+                },
+                autoClose: true,
+                autoCloseDelay: 3
+            })
         }
     }
 })
