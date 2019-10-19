@@ -59,17 +59,45 @@
 </head>
 <body>
 <div id="app">
-    <button @click="showToast1">top</button>
-    <button @click="showToast2">middle</button>
-    <button @click="showToast3">bottom</button>
+    <g-tabs :selected.sync="slectedTab">
+        <g-tabs-head>
+            <templaten slot="actions">
+                <button>设置</button>
+            </templaten>
+            <g-tabs-item name="woman">
+                <g-icon name="setting"></g-icon>
+                美女
+            </g-tabs-item>
+            <g-tabs-item name="finance" disabled>
+                财经
+            </g-tabs-item>
+            <g-tabs-item name="sports">
+                体育
+            </g-tabs-item>
+        </g-tabs-head>
+        <g-tabs-body>
+            <g-tabs-pane name="woman">
+                美女相关资讯
+            </g-tabs-pane>
+            <g-tabs-pane name="finance">
+                财经相关的资讯
+            </g-tabs-pane>
+            <g-tabs-pane name="sports">
+                体育相关的资讯
+            </g-tabs-pane>
+        </g-tabs-body>
+    </g-tabs>
+    <!--<button @click="showToast1">top</button>-->
+    <!--<button @click="showToast2">middle</button>-->
+    <!--<button @click="showToast3">bottom</button>-->
 
     <!--<g-layout style="height: 100vh;">-->
-        <!--<g-sider class="demo">sider</g-sider>-->
-        <!--<g-layout>-->
-            <!--<g-header class="demo">sider</g-header>-->
-            <!--<g-content class="demo">content</g-content>-->
-            <!--<g-footer class="demo">footer</g-footer>-->
-        <!--</g-layout>-->
+    <!--<g-sider class="demo">sider</g-sider>-->
+    <!--<g-layout>-->
+    <!--<g-header class="demo">sider</g-header>-->
+    <!--<g-content class="demo">content</g-content>-->
+    <!--<g-footer class="demo">footer</g-footer>-->
+    <!--</g-layout>-->
     <!--</g-layout>-->
     <!--<div style="border: 1px solid black;">-->
     <!--<g-row gutter="20">-->
