@@ -47,7 +47,8 @@ const app = new Vue({
             loading1: false,
             loading2: true,
             loading3: false,
-            message: 'hi'
+            message: 'hi',
+            selectedTab: 'sports'
         }
     },
     created(){
@@ -75,6 +76,9 @@ const app = new Vue({
         // this.$toast('<strong>我是 message</strong>', {})
     },
     methods: {
+        yyy() {
+            console.log('yyy');
+        },
         inputChange(e) {
             console.log(e)
         },

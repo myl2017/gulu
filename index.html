@@ -59,11 +59,11 @@
 </head>
 <body>
 <div id="app">
-    <g-tabs :selected.sync="slectedTab">
+    <g-tabs :selected.sync="selectedTab" @update:selected="yyy">
         <g-tabs-head>
-            <templaten slot="actions">
+            <template slot="actions">
                 <button>设置</button>
-            </templaten>
+            </template>
             <g-tabs-item name="woman">
                 <g-icon name="setting"></g-icon>
                 美女

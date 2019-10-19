@@ -4,6 +4,8 @@
     </div>
 </template>
 <script>
+    import Vue from 'vue'
+
     export default {
         name: 'GuluTabs',
         props: {
@@ -15,12 +17,24 @@
                 type: String,
                 default: 'horizontal',
                 validator(value) {
-                    return ['horizontal','vertical'].indexOf(value) >=0 // return true 否则 false
+                    return ['horizontal', 'vertical'].indexOf(value) >= 0 // return true 否则 false
                 }
             }
         },
-        created() {
-            this.$emit('update:selected', 'xxx')
+        data() {
+            return {
+                eventBus: new Vue()
+            }
+        },
+        provide() {
+            return {
+                eventBus: this.eventBus
+            }
+        },
+        mounted() {
+//            this.$emit('update:selected', 'xxx')
+            this.eventBus.$emit('update:selected',this.selected)
+            console.log(this.eventBus)
         }
     }
 </script>
