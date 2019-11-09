@@ -33,8 +33,15 @@
         },
         mounted() {
 //            this.$emit('update:selected', 'xxx')
-            this.eventBus.$emit('update:selected',this.selected)
             console.log(this.eventBus)
+            console.log(this.$children)
+            this.$children.forEach((vm) => {
+                vm.$children.forEach((childVm) => {
+                   if(childVm.$options.name === 'GuluTabsItem' && childVm.nmae === this.selected){
+                     this.eventBus.$emit('update:selected', this.selected,childVm)
+                   }
+               })
+            })
         }
     }
 </script>

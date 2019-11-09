@@ -49,8 +49,7 @@
 </script>
 <style scoped>
     .tabs-pane {
-        &.active {
-        background: red;
-         }
+        padding: 1em;
+        &.active {  }
     }
 </style>

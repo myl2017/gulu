@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-item" @click="xxx" :class="classes">
+    <div class="tabs-item" @click="onClick" :class="classes">
         <slot></slot>
     </div>
 </template>
@@ -8,9 +8,9 @@
         name: 'GuluTabsItem',
         inject: ['eventBus'],
         data() { // 不需要用户传值，自身维护值
-           return {
-               active: false
-           }
+            return {
+                active: false
+            }
         },
         props: { //需要用户传值 (前端开发者) 传值
 //            active: {
@@ -27,11 +27,12 @@
             }
         },
         computed: {
-          classes() {
-              return {
-                  active: this.active
-              }
-          }
+            classes() {
+                return {
+                    active: this.active,
+                    disabled: this.disabled
+                }
+            }
         },
         created() {
             console.log('爷爷给孙子的 eventBus');
@@ -49,18 +50,30 @@
             })
         },
         methods: {
-            xxx() {
-                this.eventBus.$emit('update:selected', this.name)
+            onClick() {
+                if (this.disabled) {
+                    return
+                }
+                this.eventBus.$emit('update:selected', this.name, this)
             }
         }
     }
 </script>
 <style scoped lang="scss">
+    $blue: blue;
+    $disabled-text-color: grey;
     .tabs-item {
         flex-shrink: 0;
-        padding: 0 2em;
-        &.active {
-           background: red;
-         }
+        padding: 0 1em;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    &.active {
+         color: $blue;
+     }
+    &.disabled {
+         color: $disabled-text-color;
+     }
     }
 </style>
