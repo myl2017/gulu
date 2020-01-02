@@ -20,6 +20,7 @@ import TabsPane from './tabs-pane.vue'
 import Popover from './popover.vue'
 import Collapse from './collapse.vue'
 import CollapseItem from './collapse-item.vue'
+import Cascader from './cascader.vue'
 
 
 Vue.component('g-button', Button)
@@ -42,6 +43,7 @@ Vue.component('g-tabs-pane', TabsPane)
 Vue.component('g-popover', Popover)
 Vue.component('g-collapse', Collapse)
 Vue.component('g-collapse-item', CollapseItem)
+Vue.component('g-cascader', Cascader)
 
 Vue.use(plugin)
 
@@ -54,7 +56,42 @@ const app = new Vue({
             loading2: true,
             loading3: false,
             message: 'hi',
-            selectedTab: '2'
+            selectedTab: '2',
+            source: [{
+                name: '浙江',
+                children: [
+                    {
+                        name: '杭州',
+                        children: [
+                            {name: '上城'},
+                            {name: '下城'},
+                            {name: '江干'}
+                        ]
+                    },
+                    {
+                        name: '嘉兴',
+                        children: [
+                            {name: '南湖'},
+                            {name: '秀洲'},
+                            {name: '嘉普'}
+                        ]
+                    }
+                ]
+            },
+                {
+                    name: '福建',
+                    children: [
+                        {
+                            name: '福州',
+                            children: [
+                                {name: '鼓楼'},
+                                {name: '台江'},
+                                {name: '仓山'}
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     },
     created(){
