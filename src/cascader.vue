@@ -1,36 +1,63 @@
 <template>
     <div class="cascader">
-        <div class="trigger">
-            <slot></slot>
+        <div class="trigger" @click="popoverVisible = !popoverVisible">
         </div>
-        <div class="popover">
-            <div v-for="item in source">
-                <cascader-item :sourceItem="item"></cascader-item>
-            </div>
-            <!--<div class="level-1"></div>-->
-            <!--<div class="level-2"></div>-->
-            <!--<div class="level-3"></div>-->
+        <div class="popover" v-if="popoverVisible">
+            <cascader-items :items="source"></cascader-items>
         </div>
     </div>
 </template>
 <script>
-    import CascaderItem from './cascader-item.vue'
+    import CascaderItems from './cascader-items.vue'
     export default {
         name: 'GuluCascader',
-        components: {CascaderItem},
+        components: {CascaderItems},
         props: {
             source: {
                 type: Array
             }
-        }
+        },
+        data() {
+            return {
+                popoverVisible: false,
+//                level1Selected: null,
+//                level2Selected: null
+            }
+        },
+//        computed: {
+//            level2Items() {
+//                if (this.level1Selected) {
+//                    return this.level1Selected.children
+//                } else {
+//                    return []
+//                }
+//            },
+//            level3Items () {
+//                if (this.level2Selected) {
+//                    return this.level2Selected.children
+//                } else {
+//                    return []
+//                }
+//            }
+//        }
     }
 </script>
 <style scoped lang="scss">
     @import "_var.scss";
 
     .cascader {
-        .popover {
-            >div { width: 520px;}
-        }
+    .trigger {
+        border: 1px solid red;
+        height: 32px;
+        width: 100px;
+    }
+    .popover {
+        border: 1px solid green;
+        height: 200px;
+        display: flex;
+    .label {
+        white-space: nowrap;
+    }
+    }
     }
 </style>

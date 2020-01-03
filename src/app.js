@@ -77,21 +77,29 @@ const app = new Vue({
                         ]
                     }
                 ]
-            },
-                {
-                    name: '福建',
-                    children: [
-                        {
-                            name: '福州',
-                            children: [
-                                {name: '鼓楼'},
-                                {name: '台江'},
-                                {name: '仓山'}
-                            ]
-                        }
-                    ]
-                }
-            ]
+            }, {
+                name: '福建',
+                children: [
+                    {
+                        name: '福州',
+                        children: [
+                            {name: '鼓楼'},
+                            {name: '台江'},
+                            {name: '仓山'}
+                        ]
+                    }
+                ]
+            }, {
+                name: '安徽',
+                children: [{
+                    name: '合肥',
+                    children: [{
+                        name: '瑶海'
+                    }, {
+                        name: '庐阳'
+                    }]
+                }]
+            }]
         }
     },
     created(){
